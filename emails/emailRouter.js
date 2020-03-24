@@ -4,6 +4,8 @@ const Emails = require('./emailModel');
 
 const router = express.Router();
 
+
+
 router.post('/', validateEmail, (req, res) => {
   const emailData = req.body;
   Emails.add(emailData)
