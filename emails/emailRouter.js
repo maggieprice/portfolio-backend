@@ -4,7 +4,7 @@ const Emails = require('./emailModel');
 
 const router = express.Router();
 
-router.post('/', (req, res) => {
+router.post('/', validateEmail, (req, res) => {
   const emailData = req.body;
   Emails.add(emailData)
   .then(email => {
@@ -15,5 +15,21 @@ router.post('/', (req, res) => {
   });
 });
 
+function validateEmail(req, res, next) {
+   if (req.method === 'POST') {
+    req.body('name', 'Name cannot be empty').notEmpty();
+    req.body('email', 'Must be a valid email').isEmail();
+    req.body('message', 'Message cannot be empty').notEmpty();
+  } 
+  const errors = req.validationErrors();
+  if (errors) {
+    return res.status(400).json({
+      message: 'Validation failed',
+      failures: errors
+    });
+  } else {
+    return next();
+  }
+}
 
 module.exports = router;

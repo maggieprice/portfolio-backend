@@ -6,7 +6,7 @@ exports.up = function(knex) {
         emails
           .string('name', 255)
           .notNullable()
-        emails.string('emailaddress').notNullable();
+        emails.string('email').notNullable();
         emails.string('message').notNullable();
       });
 };
