@@ -2,6 +2,7 @@
 // const router = express.Router();
 // const nodemailer = require('nodemailer');
 const creds = require('../config/config'); 
+const cors = require('cors');
 
 // const transport = {
 //   host: 'smtp.gmail.com',
@@ -75,6 +76,7 @@ const app = express();
 
 
 // body parser middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded( { extended: false } )); // this is to handle URL encoded data
 // end parser middleware
