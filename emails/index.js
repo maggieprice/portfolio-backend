@@ -1,7 +1,7 @@
 // const express = require('express');
 // const router = express.Router();
 // const nodemailer = require('nodemailer');
-// const creds = require('../config/config'); 
+const creds = require('../config/config'); 
 
 // const transport = {
 //   host: 'smtp.gmail.com',
