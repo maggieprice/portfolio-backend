@@ -12,7 +12,7 @@ let express = require("express"),
 let app = express();
 
 app.use(express.static('src'));
-
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -50,7 +50,7 @@ let server = app.listen(4000, function(){
 });
 
 
-// const cors = require('cors');
+const cors = require('cors');
 
 // const transport = {
 //   host: 'smtp.gmail.com',
@@ -124,7 +124,7 @@ let server = app.listen(4000, function(){
 
 
 // body parser middleware
-// app.use(cors());
+
 // app.use(express.json());
 // app.use(express.urlencoded( { extended: false } )); // this is to handle URL encoded data
 // end parser middleware
