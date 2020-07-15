@@ -30,7 +30,8 @@ app.post('/send', function (req, res) {
   let mailOptions = {
       // should be replaced with real recipient's account
 	  to: 'maggieprice2016@gmail.com',
-	  name: req.body.name,
+      name: req.body.name,
+      subject: req.body.subject,
       email: req.body.email,
       message: req.body.message
   };
