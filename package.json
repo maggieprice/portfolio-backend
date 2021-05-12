@@ -18,7 +18,7 @@
     "express": "^4.17.1",
     "helmet": "^3.21.3",
     "knex": "^0.20.10",
-    "nodemailer": "^6.4.6",
+    "nodemailer": "^6.4.16",
     "nodemon": "^2.0.2",
     "path": "^0.12.7"
   }
